@@ -1,0 +1,21 @@
+# Build artifacts
+build/
+*.so
+*.pyd
+*.o
+*.out
+
+# Python
+__pycache__/
+*.pyc
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+compile_commands.json
+
+
+# OS
+.DS_Store
