@@ -94,8 +94,7 @@ recovers performance at the cost of accuracy.
 **Memory layout:** KD-tree nodes are heap-allocated individually — 
 random memory addresses cause cache misses during traversal. A memory 
 pool with contiguous node allocation and index-based linking would 
-improve cache locality and parallel scaling. Van Emde Boas layout 
-would be the production-grade fix.
+improve cache locality and parallel scaling.
 
 **Parallel scaling ceiling:** Parallel gain plateaus at ~10x despite 
 24 available threads due to memory bandwidth saturation. CPU-bound 
@@ -151,6 +150,5 @@ python3 "vector db/stress_test.py"
       cache misses and improve parallel scaling beyond ~10x ceiling
 - [ ] Multi-threaded tree construction — currently single-threaded 
       O(n log n) build
-- [ ] On-disk persistence — save/load index without rebuilding
 - [ ] HNSW comparison — benchmark against hierarchical navigable 
       small world graphs at 128 dimensions
